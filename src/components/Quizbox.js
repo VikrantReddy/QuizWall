@@ -6,12 +6,10 @@ function Quizbox() {
     <div>
       <h1 style={{ textAlign: "center" }}>Quizbox</h1>
       <Quizcard
-        question={"Question"}
-        options={["Option 1", "Option 2", "Option 3", "Option 4"]}
+        question={"What is the first month of the year"}
+        options={["January", "February", "March", "April"]}
+        ans={"January"}
       />
-      {/* <Quizcard />
-      <Quizcard />
-      <Quizcard /> */}
     </div>
   );
 }
