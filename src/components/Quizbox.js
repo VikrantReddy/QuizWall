@@ -116,6 +116,12 @@ function Quizbox() {
     setClicked(index);
   };
 
+  const answered = () => {
+    setTimeout(() => {
+      setClicked(-1);
+    }, 1200);
+  };
+
   return (
     <Container>
       <h1 style={{ textAlign: "center" }}>Quizbox</h1>
@@ -132,7 +138,7 @@ function Quizbox() {
           }
         })}
       </Row>
-      {clicked > 0 && <Quizcard data={DATA[clicked]} />}
+      {clicked > 0 && <Quizcard data={DATA[clicked]} callback={answered} />}
     </Container>
   );
 }

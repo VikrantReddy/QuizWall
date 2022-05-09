@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/container";
 import Row from "react-bootstrap/row";
 import Col from "react-bootstrap/col";
@@ -16,6 +15,7 @@ function quizcard(props) {
     } else {
       e.target.style.backgroundColor = "red";
     }
+    props.callback();
   };
   return (
     <Container className="mt-5">
