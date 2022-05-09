@@ -11,7 +11,7 @@ function quizcard(props) {
     e.preventDefault();
     console.log(e.target.value);
     let val = e.target.value;
-    if (val === props.ans) {
+    if (val === props.data.ans) {
       e.target.style.backgroundColor = "green";
     } else {
       e.target.style.backgroundColor = "red";
@@ -26,11 +26,11 @@ function quizcard(props) {
           lg={6}
           md={12}
         >
-          <h3>{props.question}</h3>
+          <h3>{props.data.question}</h3>
         </QuestionCol>
         <QuestionCol lg={6} md={12}>
           <Row>
-            {props.options.map((option) => {
+            {props.data.options.map((option) => {
               return (
                 <Col key={option} className="mt-3" lg={6} md={6}>
                   <Option value={option} onSelect={onSelect} />
