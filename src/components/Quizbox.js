@@ -123,8 +123,8 @@ function Quizbox() {
   };
 
   return (
-    <Container>
-      <h1 style={{ textAlign: "center" }}>Quizbox</h1>
+    <Container className="text-center">
+      <h1>Quizbox</h1>
       <Row>
         {DATA.map((val, index) => {
           if (clicked < 0) {
