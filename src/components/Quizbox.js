@@ -135,6 +135,8 @@ function Quizbox() {
                 </Button>
               </Col>
             );
+          } else {
+            return <></>;
           }
         })}
       </Row>
