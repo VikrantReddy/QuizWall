@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/container";
 import Row from "react-bootstrap/row";
 import Col from "react-bootstrap/col";
@@ -7,7 +8,7 @@ import Option from "./Option.js";
 import { keyframes } from "styled-components";
 
 function quizcard(props) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [selected, setSelected] = useState("");
   useEffect(() => {
     setTimeout(() => {
       props.callback();
@@ -15,14 +16,16 @@ function quizcard(props) {
   });
   const onSelect = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
-    let val = e.target.value;
-    if (val === props.data.ans) {
-      e.target.style.backgroundColor = "green";
-    } else {
-      e.target.style.backgroundColor = "red";
+    if (selected.length === 0) {
+      let val = e.target.value;
+      setSelected(val);
+      if (val === props.data.ans) {
+        e.target.style.backgroundColor = "green";
+      } else {
+        e.target.style.backgroundColor = "red";
+      }
+      props.callback();
     }
-    props.callback();
   };
   return (
     <Container className="mt-5">
@@ -82,6 +85,7 @@ const ProgressBar = styled.div`
   animation-name: ${breatheAnimation};
   animation-duration: 30s;
   animation-iteration-count: 1;
+  animation-timing-function: linear;
 `;
 
 export default quizcard;
