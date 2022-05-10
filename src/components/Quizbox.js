@@ -138,7 +138,7 @@ function Quizbox() {
           }
         })}
       </Row>
-      {clicked > 0 && <Quizcard data={DATA[clicked]} callback={answered} />}
+      {clicked >= 0 && <Quizcard data={DATA[clicked]} callback={answered} />}
     </Container>
   );
 }
