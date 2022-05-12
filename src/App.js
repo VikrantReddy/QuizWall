@@ -1,11 +1,12 @@
 import React from "react";
-import Quizbox from "./components/Quizbox.js";
-import Navigation from "./components/Navigation.js";
+import Gamescreen from "./components/Gamescreen";
+import Navigation from "./components/Navigation";
+
 function App() {
   return (
     <div>
       <Navigation />
-      <Quizbox />
+      <Gamescreen />
     </div>
   );
 }

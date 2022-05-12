@@ -7,6 +7,11 @@ import styled from "styled-components";
 import Option from "./Option.js";
 import { keyframes } from "styled-components";
 
+/**
+ *
+ * @param {*} props
+ * @returns {*} quizcard component
+ */
 function quizcard(props) {
   const [selected, setSelected] = useState("");
   useEffect(() => {
